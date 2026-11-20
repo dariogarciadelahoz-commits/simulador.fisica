@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Física | Caída Libre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <h1>SIMULADOR DE FÍSICA</h1>
+        <p>Caída libre y conservación de la energía</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- CONTROLES -->
+        <section class="panel">
+            <h2>Configuración del experimento</h2>
+
+            <div class="controles">
+                <label>
+                    Masa (kg)
+                    <input type="number" id="masa" value="2" min="0.1" step="0.1">
+                </label>
+
+                <label>
+                    Altura inicial (m)
+                    <input type="number" id="altura" value="20" min="1" step="1">
+                </label>
+
+                <label>
+                    Gravedad (m/s²)
+                    <input type="number" id="gravedad" value="9.8" min="0.1" step="0.1">
+                </label>
+
+                <label>
+                    Resistencia del aire (%)
+                    <input type="number" id="friccion" value="0" min="0" max="100">
+                </label>
+            </div>
+
+            <div class="botones">
+                <button id="iniciar">Iniciar</button>
+                <button id="pausar">Pausar</button>
+                <button id="reiniciar">Reiniciar</button>
+            </div>
+        </section>
+
+        <!-- SIMULACIÓN -->
+        <section class="panel">
+            <h2>Simulación de caída libre</h2>
+
+            <div class="escenario">
+                <div class="pelota" id="pelota"></div>
+                <div class="suelo"></div>
+            </div>
+
+            <div class="datos">
+                <div>
+                    <span>Tiempo</span>
+                    <strong id="tiempo">0.00 s</strong>
+                </div>
+
+                <div>
+                    <span>Altura</span>
+                    <strong id="alturaActual">20.00 m</strong>
+                </div>
+
+                <div>
+                    <span>Velocidad</span>
+                    <strong id="velocidad">0.00 m/s</strong>
+                </div>
+
+                <div>
+                    <span>Aceleración</span>
+                    <strong id="aceleracion">9.80 m/s²</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENERGÍAS -->
+        <section class="panel">
+            <h2>Tipos de energía</h2>
+
+            <div class="energias">
+                <div class="energia potencial">
+                    <span>▲ Energía potencial</span>
+                    <strong id="ep">0 J</strong>
+                </div>
+
+                <div class="energia cinetica">
+                    <span>● Energía cinética</span>
+                    <strong id="ec">0 J</strong>
+                </div>
+
+                <div class="energia mecanica">
+                    <span>◆ Energía mecánica</span>
+                    <strong id="em">0 J</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRÁFICAS -->
+        <section class="panel">
+            <h2>Gráficas de energía</h2>
+            <canvas id="grafica" width="700" height="300"></canvas>
+        </section>
+
+        <!-- TABLA -->
+        <section class="panel">
+            <h2>Tabla de resultados</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tiempo (s)</th>
+                            <th>Altura (m)</th>
+                            <th>Velocidad (m/s)</th>
+                            <th>Potencial (J)</th>
+                            <th>Cinética (J)</th>
+                            <th>Mecánica (J)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabla">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section class="panel">
+            <h2>Resultados del experimento</h2>
+
+            <div class="resultados">
+                <p>Tiempo de caída: <strong id="tiempoFinal">--</strong></p>
+                <p>Velocidad final: <strong id="velocidadFinal">--</strong></p>
+                <p>Distancia recorrida: <strong id="distancia">--</strong></p>
+                <p>Conclusión: <strong id="conclusion">Esperando simulación...</strong></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Proyecto educativo de física | Caída libre y energía</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

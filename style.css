@@ -1,0 +1,329 @@
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1120;
+    color: #ffffff;
+}
+
+/* ENCABEZADO */
+.encabezado {
+    text-align: center;
+    padding: 30px 15px;
+    background: #111c32;
+    border-bottom: 2px solid #168bff;
+}
+
+.encabezado h1 {
+    color: #168bff;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.encabezado p {
+    color: #b8c5d8;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* PANELES */
+.panel {
+    background: #152238;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid #263b59;
+    box-shadow: 0 5px 15px #00000030;
+}
+
+.panel h2 {
+    color: #42a5ff;
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+
+/* CONTROLES */
+.controles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.controles label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #cbd5e1;
+}
+
+input {
+    width: 100%;
+    padding: 11px;
+    background: #0b1120;
+    color: white;
+    border: 1px solid #385273;
+    border-radius: 7px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #168bff;
+}
+
+/* BOTONES */
+.botones {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 11px 22px;
+    border: none;
+    border-radius: 7px;
+    background: #168bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0066cc;
+    transform: translateY(-2px);
+}
+
+#pausar {
+    background: #e69b25;
+}
+
+#pausar:hover {
+    background: #bd7810;
+}
+
+#reiniciar {
+    background: #e44747;
+}
+
+#reiniciar:hover {
+    background: #bd2929;
+}
+
+/* ESCENARIO */
+.escenario {
+    height: 300px;
+    background: linear-gradient(#102b4d, #0b1120);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #385273;
+}
+
+.pelota {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #168bff 65%);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 18px #168bff;
+    z-index: 2;
+}
+
+.suelo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    background: #36c77b;
+}
+
+/* DATOS DE MOVIMIENTO */
+.datos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.datos div {
+    background: #0b1120;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.datos span {
+    display: block;
+    color: #9eafc5;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.datos strong {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* ENERGÍAS */
+.energias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.energia {
+    padding: 20px;
+    background: #0b1120;
+    border-radius: 9px;
+    border-left: 4px solid;
+}
+
+.energia span {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.energia strong {
+    font-size: 22px;
+}
+
+.potencial {
+    border-color: #168bff;
+}
+
+.potencial span,
+.potencial strong {
+    color: #42a5ff;
+}
+
+.cinetica {
+    border-color: #36c77b;
+}
+
+.cinetica span,
+.cinetica strong {
+    color: #36c77b;
+}
+
+.mecanica {
+    border-color: #ffad42;
+}
+
+.mecanica span,
+.mecanica strong {
+    color: #ffad42;
+}
+
+/* GRÁFICA */
+canvas {
+    width: 100%;
+    max-width: 100%;
+    background: #0b1120;
+    border-radius: 8px;
+}
+
+/* TABLA */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #0875d1;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #344761;
+}
+
+td {
+    color: #d5deeb;
+}
+
+tbody tr:hover {
+    background: #203552;
+}
+
+/* RESULTADOS */
+.resultados {
+    background: #0b1120;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.resultados p {
+    margin-bottom: 13px;
+    color: #cbd5e1;
+}
+
+.resultados strong {
+    color: #42a5ff;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #91a4bd;
+    background: #111c32;
+    border-top: 1px solid #263b59;
+}
+
+/* DISEÑO PARA CELULARES */
+@media (max-width: 750px) {
+    .controles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .energias {
+        grid-template-columns: 1fr;
+    }
+
+    .botones {
+        flex-wrap: wrap;
+    }
+
+    button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 450px) {
+    .encabezado h1 {
+        font-size: 23px;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    .controles {
+        grid-template-columns: 1fr;
+    }
+}
